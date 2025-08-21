@@ -90,7 +90,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-200 dark:bg-black text-white">
+    <footer className="bg-white dark:bg-black text-white">
       <div className="relative w-full h-max">
         <div id="map" className="w-full h-max">
           <iframe
