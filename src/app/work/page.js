@@ -1,160 +1,318 @@
-"use client"
-import React from 'react'
-import Image from 'next/image'
-const projects=[
-{
-    title: 'E-commerce Platform for Fashion Hub',
-    description: 'We provide stylish clothing and user-friendly e-commerce platform for Chic Boutique...',
-    image: 'https://via.placeholder.com/300x200',
-    link: 'https://chicboutique.com',
-  },
-  {
-    title: 'Mobile App for Food Delivery Service',
-    description: 'HungryBites helps you create a mobile app that streamlines their food...',
-    image: 'https://via.placeholder.com/300x200',
-    link: 'https://hungrybites.com',
-  },
-  {
-    title: 'Booking and Reservation System for Event Management',
-    description: 'We offer a booking and reservation system that streamlines event...',
-    image: 'https://via.placeholder.com/300x200',
-    link: 'https://eventmanagement.com',
-  },
-  {
-    title: 'Custom Software for Workflow Automation',
-    description: 'We provide custom software for workflow automation, resulting in improved...',
-    image: 'https://via.placeholder.com/300x200',
-    link: 'https://workflowautomation.com',
-  },
-  {
-    title: 'Custom Software for Workflow Automation',
-    description: 'We provide custom software for workflow automation, resulting in improved...',
-    image: 'https://via.placeholder.com/300x200',
-    link: 'https://workflowautomation.com',
-  },
-  {
-    title: 'Custom Software for Workflow Automation',
-    description: 'We provide custom software for workflow automation, resulting in improved...',
-    image: 'https://via.placeholder.com/300x200',
-    link: 'https://workflowautomation.com',
-  },
-  {
-    title: 'Custom Software for Workflow Automation',
-    description: 'We provide custom software for workflow automation, resulting in improved...',
-    image: 'https://via.placeholder.com/300x200',
-    link: 'https://workflowautomation.com',
-  },
-  {
-    title: 'Custom Software for Workflow Automation',
-    description: 'We provide custom software for workflow automation, resulting in improved...',
-    image: 'https://via.placeholder.com/300x200',
-    link: 'https://workflowautomation.com',
-  },
-  {
-    title: 'Custom Software for Workflow Automation',
-    description: 'We provide custom software for workflow automation, resulting in improved...',
-    image: 'https://via.placeholder.com/300x200',
-    link: 'https://workflowautomation.com',
-  },
-  {
-    title: 'Custom Software for Workflow Automation',
-    description: 'We provide custom software for workflow automation, resulting in improved...',
-    image: 'https://via.placeholder.com/300x200',
-    link: 'https://workflowautomation.com',
-  },
-]
-const Ourworks=()=>{
-  return(
-    <>
-    <section className="relative w-full h-[242px] flex items-center justify-center text-center">
-<Image   
-src="/image.png"
-alt="background image brother"
-layout="fill"
-objectfit="cover"
-quality={100}
- className=" z-0"
-/>
+"use client";
+import React, { useState } from 'react';
+import Image from "next/image";
+import { Shield } from 'lucide-react';
 
-<div className="absolute inset-0 bg-[#262626]/60  border-[5px] border-[#333333] z-10"></div>
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    contactReasons: {
+      webDesign: false,
+      collaboration: false,
+      mobileAppDesign: false,
+      others: false,
+    },
+    budget: [2500],
+    message: "",
+  });
 
-<div className="relative z-20 px-[70px] text-white w-full max-w-[4350px]" >
-  <h2 className="text-4xl font-bold mb-[24.86px] ">
-Our Works 
-  </h2>
-  <p className="text-lg">
-    Discover a portfolio of visually stunning and strategically crafted
-    digital projects that showcase our creativity and expertise.
-  </p>
-</div>
-    </section>
-    {/* second section  */}
-    <div className="min-h-screen bg-gray-900 text-white p-6">
-      <div
-        className="max-w-[1596px] mx-auto border border-[#262626] p-6"
-        style={{ paddingTop: '120px', gap: '50px' }}
-      >
-        <h1 className="text-2xl font-bold mb-4">At SquareUp</h1>
-        <p className="mb-6">We have the privilege of working with a diverse range of clients and delivering exceptional digital products that drive success...</p>
-        <p className="mb-6">Here are ten examples of notable works:</p>
-        <div className="grid grid-cols-2 gap-50">
-          {projects.map((project, index) => (
-            <div key={index} className="mb-50">
-              <Image width={200} height={200} src={project.image} alt={project.title} className="w-full h-auto mb-2" />
-              <h2 className="text-xl font-semibold">{project.title}</h2>
-              <p className="text-sm">{project.description}</p>
-              <a href={project.link} className="text-blue-400 underline">Visit Site</a>
-            </div>
-          ))}
-        </div>
+  const handleInputChange = (field, value) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  const handleCheckboxChange = (reason, checked) => {
+    setFormData((prev) => ({
+      ...prev,
+      contactReasons: {
+        ...prev.contactReasons,
+        [reason]: checked,
+      },
+    }));
+  };
+
+  const handleBudgetChange = (e) => {
+    const value = parseInt(e.target.value);
+    setFormData((prev) => ({
+      ...prev,
+      budget: [value],
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    // Handle form submission here
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-slate-900 flex items-center justify-center p-4">
+      {/* Background Image Overlay */}
+      <div className="absolute inset-0 opacity-5">
+        <Image
+          src="/ai-generated-8540913_1280.jpg" 
+          alt="Background" 
+          className="w-full h-full object-cover"
+          fill
+          priority
+        />
       </div>
-    </div>
-          {/* third  */}
- <section className="relative w-full bg-black text-white py-20 md:py-32 overflow-hidden">
-        {/* Background Pattern/Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-90"></div>
-        
-        {/* Content Container */}
-        <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-8 text-center">
-          {/* Icon */}
-          <div className="flex justify-center mb-8">
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-lime-400 rounded-2xl flex items-center justify-center">
-              <svg className="w-8 h-8 md:w-10 md:h-10 text-black" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12,2L2,7L12,12L22,7L12,2M2,17L12,22L22,17L12,12L2,17Z"/>
-              </svg>
+      
+      {/* Contact Section Container */}
+      <div
+        className="relative bg-gradient-to-br from-slate-800/95 to-gray-900/95 backdrop-blur-lg border border-slate-600/30 rounded-3xl overflow-hidden shadow-2xl"
+        style={{
+          width: "1596px",
+          minHeight: "1771px",
+          maxWidth: "100vw",
+        }}
+      >
+        <div className="flex flex-col h-full">
+          {/* Header Section */}
+          <div className="bg-gradient-to-br from-blue-600/30 to-teal-600/30 text-center px-8 py-12 flex-shrink-0 relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-teal-500/10"></div>
+            
+            {/* Icon Box */}
+            <div className="relative w-20 h-20 rounded-2xl mx-auto mb-8 flex items-center justify-center bg-gradient-to-br from-blue-500 to-teal-500 shadow-xl">
+              <Shield className="w-10 h-10 text-white" />
             </div>
+
+            {/* Heading */}
+            <h1 className="relative text-white text-4xl md:text-5xl font-bold mb-6 max-w-2xl mx-auto leading-tight">
+              Thank you for your Interest in{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
+                SquareUp.
+              </span>
+            </h1>
+
+            {/* Paragraph */}
+            <p className="relative text-slate-300 text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
+              We would love to hear from you and discuss how we can help bring
+              your digital ideas to life. Here are the different ways you can
+              get in touch with us.
+            </p>
+
+            {/* Button */}
+            <button className="relative bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white font-semibold px-10 py-4 rounded-xl shadow-xl transition-all duration-300 text-lg transform hover:scale-105 hover:shadow-2xl">
+              Start Project
+            </button>
           </div>
 
-          {/* Main Heading */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 md:mb-8 leading-tight">
-            Let us Bring your Ideas to Life in the Digital World.
-          </h2>
-          
-          {/* Description Text */}
-          <p className="text-gray-300 text-base md:text-lg lg:text-xl leading-relaxed mb-8 md:mb-12 max-w-3xl mx-auto">
-            No matter which services you choose, we are committed to delivering exceptional results that exceed your expectations. Our multidisciplinary team works closely together to ensure seamless collaboration and a unified vision for your digital product.
-          </p>
+          {/* Form Section */}
+          <div className="flex-1 px-8 py-12">
+            <div className="max-w-4xl mx-auto">
+              <form onSubmit={handleSubmit} className="space-y-10">
+                {/* Name and Email Row */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div className="space-y-3">
+                    <label
+                      htmlFor="fullName"
+                      className="block text-slate-200 text-lg font-medium"
+                    >
+                      Full Name
+                    </label>
+                    <input
+                      id="fullName"
+                      type="text"
+                      placeholder="Type here"
+                      value={formData.fullName}
+                      onChange={(e) =>
+                        handleInputChange("fullName", e.target.value)
+                      }
+                      className="w-full px-4 py-4 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white text-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm transition-all duration-200"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-3">
+                    <label
+                      htmlFor="email"
+                      className="block text-slate-200 text-lg font-medium"
+                    >
+                      Email
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      placeholder="Type here"
+                      value={formData.email}
+                      onChange={(e) =>
+                        handleInputChange("email", e.target.value)
+                      }
+                      className="w-full px-4 py-4 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white text-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm transition-all duration-200"
+                      required
+                    />
+                  </div>
+                </div>
 
-          {/* CTA Button */}
-          <button className="bg-lime-400 hover:bg-lime-500 text-black font-semibold px-8 md:px-12 py-3 md:py-4 rounded-lg text-base md:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-            Start Project
-          </button>
+                {/* Contact Reasons */}
+                <div className="space-y-6">
+                  <label className="block text-slate-200 text-lg font-medium">
+                    Why are you contacting us?
+                  </label>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {[
+                      { key: "webDesign", label: "Web Design" },
+                      { key: "collaboration", label: "Collaboration" },
+                      { key: "mobileAppDesign", label: "Mobile App Design" },
+                      { key: "others", label: "Others" },
+                    ].map((item) => (
+                      <div
+                        key={item.key}
+                        className="flex items-center space-x-4 p-4 rounded-xl bg-slate-800/30 border border-slate-700/50 hover:bg-slate-700/30 transition-all duration-200"
+                      >
+                        <div className="relative">
+                          <input
+                            type="checkbox"
+                            id={item.key}
+                            checked={formData.contactReasons[item.key]}
+                            onChange={(e) =>
+                              handleCheckboxChange(item.key, e.target.checked)
+                            }
+                            className="w-6 h-6 text-blue-400 bg-slate-800 border-slate-600 rounded-lg focus:ring-blue-400 focus:ring-2 transition-all duration-200"
+                          />
+                          {formData.contactReasons[item.key] && (
+                            <svg
+                              className="absolute top-1 left-1 w-4 h-4 text-blue-400 pointer-events-none"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          )}
+                        </div>
+                        <label
+                          htmlFor={item.key}
+                          className="text-slate-300 cursor-pointer hover:text-white transition-colors text-lg"
+                        >
+                          {item.label}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Budget Slider */}
+                <div className="space-y-6">
+                  <label className="block text-slate-200 text-lg font-medium">
+                    Your Budget
+                  </label>
+                  <p className="text-slate-400 text-base">
+                    Slide to indicate your budget range
+                  </p>
+                  <div className="px-4 py-8 bg-slate-800/30 rounded-xl border border-slate-700/50">
+                    <div className="relative">
+                      <input
+                        type="range"
+                        min="1000"
+                        max="5000"
+                        step="100"
+                        value={formData.budget[0]}
+                        onChange={handleBudgetChange}
+                        className="w-full h-3 bg-slate-700 rounded-lg appearance-none cursor-pointer slider"
+                      />
+                      <div
+                        className="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg pointer-events-none transition-all duration-300"
+                        style={{
+                          width: `${
+                            ((formData.budget[0] - 1000) / 4000) * 100
+                          }%`,
+                        }}
+                      ></div>
+                    </div>
+                    <div className="flex justify-between text-base text-slate-400 mt-6">
+                      <span>$1,000</span>
+                      <span className="text-transparent bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text font-bold text-xl">
+                        ${formData.budget[0].toLocaleString()}
+                      </span>
+                      <span>$5,000</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Message */}
+                <div className="space-y-3">
+                  <label
+                    htmlFor="message"
+                    className="block text-slate-200 text-lg font-medium"
+                  >
+                    Your Message
+                  </label>
+                  <textarea
+                    id="message"
+                    placeholder="Type here"
+                    value={formData.message}
+                    onChange={(e) =>
+                      handleInputChange("message", e.target.value)
+                    }
+                    rows="6"
+                    className="w-full px-4 py-4 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white text-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent resize-none backdrop-blur-sm transition-all duration-200"
+                    required
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <div className="text-center pt-8">
+                  <button
+                    type="submit"
+                    className="w-full max-w-md bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white font-semibold py-5 px-8 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl text-lg transform hover:scale-105 hover:-translate-y-1"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
 
-        {/* Decorative Elements */}
-        <div className="absolute top-10 left-10 w-2 h-2 bg-lime-400 rounded-full opacity-60"></div>
-        <div className="absolute top-20 right-20 w-1 h-1 bg-lime-400 rounded-full opacity-40"></div>
-        <div className="absolute bottom-10 left-20 w-1.5 h-1.5 bg-lime-400 rounded-full opacity-50"></div>
-        <div className="absolute bottom-20 right-10 w-2 h-2 bg-lime-400 rounded-full opacity-30"></div>
-  </section>
+      <style jsx>{`
+        .slider::-webkit-slider-thumb {
+          appearance: none;
+          height: 28px;
+          width: 28px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #3b82f6, #14b8a6);
+          cursor: pointer;
+          border: 4px solid #1e293b;
+          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+          transition: all 0.2s ease;
+        }
 
+        .slider::-webkit-slider-thumb:hover {
+          transform: scale(1.1);
+          box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+        }
 
+        .slider::-moz-range-thumb {
+          height: 28px;
+          width: 28px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #3b82f6, #14b8a6);
+          cursor: pointer;
+          border: 4px solid #1e293b;
+          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+          transition: all 0.2s ease;
+        }
 
+        .slider::-moz-range-thumb:hover {
+          transform: scale(1.1);
+          box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+        }
 
-
-    </>
-    
-
-  )
+        @media (max-width: 1596px) {
+          .contact-container {
+            width: 100% !important;
+            margin: 0 1rem;
+          }
+        }
+      `}</style>
+    </div>
+  );
 }
-export default Ourworks
