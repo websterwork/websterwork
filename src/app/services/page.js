@@ -1,4 +1,3 @@
-// app/services/page.js
 import Link from 'next/link';
 
 const ServicesPage = () => {
@@ -52,12 +51,12 @@ const ServicesPage = () => {
       description: "User interface and experience design",
       icon: "💻"
     },
-    {
-      name: "Video Editing",
-      href: "/services/video-editing",
-      description: "Professional video production and editing",
-      icon: "🎬"
-    },
+    // {
+    //   name: "Video Editing",
+    //   href: "/services/video-editing",
+    //   description: "Professional video production and editing",
+    //   icon: "🎬"
+    // },
     {
       name: "Website Development",
       href: "/services/website-development",
@@ -111,7 +110,7 @@ const ServicesPage = () => {
                   ? 'text-white' 
                   : 'text-purple-600 dark:text-purple-400'
               }`}>
-                Learn more →
+                Learn more &rarr;
               </div>
             </Link>
           ))}
@@ -124,7 +123,7 @@ const ServicesPage = () => {
               Ready to Get Started?
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              Let's discuss your project and find the perfect solution for your business needs.
+              Let&apos;s discuss your project and find the perfect solution for your business needs.
             </p>
             <Link
               href="/contacts"

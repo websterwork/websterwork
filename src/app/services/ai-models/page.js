@@ -23,7 +23,7 @@ const AIServicesPage = () => {
             Explore limitless possibilities with our AI development services. Our AI solutions are here to drive
             innovation, efficiency, and success in your business endeavors.
           </p>
-          <button className="btn btn-custom">Let's Connect</button>
+          <button className="btn btn-custom">Let&apos;s Connect</button>
         </div>
       </section>
 
@@ -43,9 +43,9 @@ const AIServicesPage = () => {
                 like GPT tailored to your business needs.
               </p>
               <p className="para">
-                With our holistic AI as a service, we don't just create AI solutions;
-                we lay the foundation for your business's sustainable success in the age of AI.
-                Whether it's automating tasks or enhancing customer experiences we're here to empower your
+                With our holistic AI as a service, we don&apos;t just create AI solutions;
+                we lay the foundation for your business&apos;s sustainable success in the age of AI.
+                Whether it&apos;s automating tasks or enhancing customer experiences we&apos;re here to empower your
                 journey.
               </p>
               <button className="btn btn-primary mt-3">Schedule a Demo</button>
@@ -205,7 +205,7 @@ const AIServicesPage = () => {
                     <h5 className="card-title fw-bold">Chat GPT Integration</h5>
                     <p className="card-text para">
                       Automate responses, handle queries effectively, and engage users in natural
-                      conversations, enhancing your platform's user experience.
+                      conversations, enhancing your platform&apos;s user experience.
                     </p>
                   </div>
                 </div>

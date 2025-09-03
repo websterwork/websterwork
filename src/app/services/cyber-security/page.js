@@ -1,5 +1,6 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { ChevronRight, ChevronDown } from 'lucide-react';
 
 const CyberSecurityPage = () => {
@@ -72,22 +73,6 @@ const CyberSecurityPage = () => {
     {
       question: "Do you offer free consultations?",
       answer: "Yes, we offer a free 30-minute consultation call to understand your project requirements."
-    },
-    {
-      question: "Do you offer free consultations?",
-      answer: "Yes, we offer a free 30-minute consultation call to understand your project requirements."
-    },
-    {
-      question: "Do you offer free consultations?",
-      answer: "Yes, we offer a free 30-minute consultation call to understand your project requirements."
-    },
-    {
-      question: "Do you offer free consultations?",
-      answer: "Yes, we offer a free 30-minute consultation call to understand your project requirements."
-    },
-    {
-      question: "Do you offer free consultations?",
-      answer: "Yes, we offer a free 30-minute consultation call to understand your project requirements."
     }
   ];
 
@@ -95,10 +80,12 @@ const CyberSecurityPage = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <img 
+        <Image 
           src="/Cyber-Security.jpg"
           alt="Cyber Security Background"
+          fill
           className="absolute inset-0 w-full h-full object-cover"
+          priority
         />
         
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
@@ -111,7 +98,7 @@ const CyberSecurityPage = () => {
             Boost engagement with our top-tier Cyber-Security services. Craft captivating interfaces for seamless navigation and enhanced digital presence.
           </p>
           <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-            Let's Connect
+            Let&apos;s Connect
           </button>
         </div>
       </section>
@@ -130,7 +117,7 @@ const CyberSecurityPage = () => {
               
               <div className="space-y-4 text-gray-700">
                 <p className="text-lg leading-relaxed">
-                  In today's digital landscape, exceptional UI/UX design is paramount for every business. It shapes users' first impressions, influences engagement, and determines business success. A seamless and intuitive design enhances user satisfaction, retention, and brand loyalty. Xeven Solutions, a top-tier ui ux design services company, provides intuitive designing services that wow users and elevate your digital presence. Our team of experts analyzes user behavior to create engaging and personalized experiences that set new standards for interaction and visual appeal. We're redefining interaction and visual appeal, setting new standards for the industry. Step into the future of design and engagement with our ui/ux design services.
+                  In today&apos;s digital landscape, exceptional UI/UX design is paramount for every business. It shapes users&apos; first impressions, influences engagement, and determines business success. A seamless and intuitive design enhances user satisfaction, retention, and brand loyalty. Xeven Solutions, a top-tier UI/UX design services company, provides intuitive designing services that wow users and elevate your digital presence. Our team of experts analyzes user behavior to create engaging and personalized experiences that set new standards for interaction and visual appeal. We&apos;re redefining interaction and visual appeal, setting new standards for the industry. Step into the future of design and engagement with our UI/UX design services.
                 </p>
               </div>
               
@@ -141,10 +128,13 @@ const CyberSecurityPage = () => {
 
             {/* Right Column */}
             <div className="text-center">
-              <img 
+              <Image 
                 src="/Cyber.jpg" 
                 alt="Cyber Security Services" 
+                width={600} // Replace with actual image width
+                height={400} // Replace with actual image height
                 className="w-full rounded-lg shadow-2xl"
+                priority
               />
             </div>
           </div>
@@ -165,10 +155,12 @@ const CyberSecurityPage = () => {
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border hover:border-blue-200 transform hover:-translate-y-1">
                 <div className="mb-6">
-                  <img 
+                  <Image 
                     src={service.image} 
                     alt={service.title}
-                    className="w-20 h-20 mx-auto object-contain"
+                    width={80} // Replace with actual image width
+                    height={80} // Replace with actual image height
+                    className="mx-auto object-contain"
                   />
                 </div>
                 <h5 className="text-xl font-bold mb-4 text-gray-800">
@@ -196,10 +188,12 @@ const CyberSecurityPage = () => {
             {industries.map((industry, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 text-center border hover:border-blue-200 transform hover:-translate-y-1">
                 <div className="mb-6">
-                  <img 
+                  <Image 
                     src={industry.image} 
                     alt={industry.title}
-                    className="w-20 h-20 mx-auto object-contain"
+                    width={80} // Replace with actual image width
+                    height={80} // Replace with actual image height
+                    className="mx-auto object-contain"
                   />
                 </div>
                 <h5 className="text-xl font-bold mb-4 text-gray-800">

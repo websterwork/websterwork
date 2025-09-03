@@ -15,6 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
+import Image from "next/image"
 
 export default function AboutPage() {
   const router = useRouter()
@@ -105,7 +106,7 @@ export default function AboutPage() {
     {
       icon: faUsers,
       title: "Collaboration",
-      description: "We believe in the power of teamwork and foster an environment where everyone's voice matters.",
+      description: "We believe in the power of teamwork and foster an environment where everyone&apos;s voice matters.",
     },
     {
       icon: faStar,
@@ -124,7 +125,13 @@ export default function AboutPage() {
       <section className="relative bg-gradient-to-br via-blue-700 to-blue-800 text-white py-24 px-4">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0 opacity-20">
-          <img src="/ai-generated-8540913_1280.jpg" alt="Background" className="w-full h-full object-cover" />
+          <Image
+            src="/ai-generated-8540913_1280.jpg"
+            alt="Background"
+            fill
+            className="object-cover"
+            quality={75}
+          />
         </div>
         <div className="relative max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 rounded-full mb-8">
@@ -134,7 +141,7 @@ export default function AboutPage() {
             About Our <span className="text-orange-400">Company</span>
           </h1>
           <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            We're passionate innovators dedicated to transforming ideas into digital reality. Our mission is to empower
+            We&apos;re passionate innovators dedicated to transforming ideas into digital reality. Our mission is to empower
             businesses through cutting-edge technology solutions.
           </p>
         </div>
@@ -185,7 +192,7 @@ export default function AboutPage() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Values</h3>
               <p className="text-gray-600 leading-relaxed">
                 Built on integrity, innovation, and collaboration. We believe in transparent communication, continuous
-                learning, and creating solutions that make a positive difference in people's lives.
+                learning, and creating solutions that make a positive difference in people&apos;s lives.
               </p>
             </div>
           </div>
@@ -280,10 +287,13 @@ export default function AboutPage() {
               <div key={index} className="group">
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
                   <div className="relative overflow-hidden">
-                    <img
+                    <Image
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
-                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                      width={400}
+                      height={256}
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      quality={75}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
@@ -304,7 +314,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Work Together?</h2>
           <p className="text-blue-100 text-xl mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can help transform your business with innovative technology solutions.
+            Let&apos;s discuss how we can help transform your business with innovative technology solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button

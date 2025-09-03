@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from 'next/image';
 
 export default function UiUxDesignPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
@@ -53,7 +54,7 @@ export default function UiUxDesignPage() {
             presence.
           </p>
           <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg shadow text-white font-semibold transition-colors">
-            Let's Connect
+            Let&apos;s Connect
           </button>
         </div>
       </section>
@@ -66,7 +67,7 @@ export default function UiUxDesignPage() {
               Top-Tier User-Friendly <br /> Custom UI/UX Design <br /> Services
             </h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              In today’s digital landscape, exceptional UI/UX design is
+              In today&apos;s digital landscape, exceptional UI/UX design is
               paramount...
             </p>
             <button className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg shadow text-white font-semibold transition-colors">
@@ -75,10 +76,12 @@ export default function UiUxDesignPage() {
           </div>
 
           <div className="flex justify-center">
-            <img
+            <Image
               src="/UI UX Design.jpg"
               alt="AI Services"
-              className="rounded-xl shadow-lg max-w-full h-auto"
+              width={600} // Adjust width as per your image dimensions
+              height={400} // Adjust height as per your image dimensions
+              className="rounded-xl shadow-lg"
             />
           </div>
         </div>

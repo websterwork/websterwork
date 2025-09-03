@@ -1,6 +1,7 @@
 "use client";
 import Head from 'next/head';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const Home = () => {
   // Hero Section
@@ -18,11 +19,11 @@ const Home = () => {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center bg-black/50 text-white p-6">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">Custom Web Development</h1>
         <p className="max-w-2xl mb-6 text-lg">
-          Unlock your business’s full potential with our Custom Web Development Services. Tailored solutions
+          Unlock your business&apos;s full potential with our Custom Web Development Services. Tailored solutions
           designed to boost efficiency, streamline processes, and drive growth.
         </p>
         <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg shadow text-white font-semibold transition-colors">
-          Let's Connect
+          Let&apos;s Connect
         </button>
       </div>
     </section>
@@ -53,10 +54,13 @@ const Home = () => {
           </button>
         </div>
         <div className="flex justify-center">
-          <img
+          <Image
             src="/Custom Web Development img.png"
             alt="AI Services"
-            className="rounded-xl shadow-lg max-w-full h-auto"
+            className="rounded-xl shadow-lg"
+            width={500}
+            height={300}
+            style={{ objectFit: 'contain' }}
           />
         </div>
       </div>
@@ -98,7 +102,7 @@ const Home = () => {
     {
       title: 'Chat GPT Integration',
       description:
-        'Automate responses, handle queries effectively, and engage users in natural Conversations, enhancing your platform’s user experience.',
+        'Automate responses, handle queries effectively, and engage users in natural Conversations, enhancing your platform&apos;s user experience.',
       image: '/Chat-GPT-integration.png',
     },
   ];
@@ -114,7 +118,14 @@ const Home = () => {
             <div key={index} className="border border-gray-200 rounded-lg shadow-sm overflow-hidden">
               <div className="p-6 text-center">
                 <div className="mb-3">
-                  <img src={service.image} className="max-w-[100px] h-auto mx-auto" alt={service.title} />
+                  <Image
+                    src={service.image}
+                    className="max-w-[100px] h-auto mx-auto"
+                    alt={service.title}
+                    width={100}
+                    height={100}
+                    style={{ objectFit: 'contain' }}
+                  />
                 </div>
                 <h5 className="text-xl font-bold mb-3 text-gray-800">{service.title}</h5>
                 <p className="text-gray-600 leading-relaxed">{service.description}</p>
@@ -147,8 +158,6 @@ const Home = () => {
     },
   ];
 
-
-
   // FAQ Section
   const faqs = [
     {
@@ -164,11 +173,10 @@ const Home = () => {
       question: 'Do you offer free consultations?',
       answer: 'Yes, we offer a free 30-minute consultation call to understand your project requirements.',
     },
- {
-      question: "Do you provide ongoing support?",
-      answer: "Yes, we offer comprehensive ongoing support and maintenance packages for all our solutions."
-    }
-
+    {
+      question: 'Do you provide ongoing support?',
+      answer: 'Yes, we offer comprehensive ongoing support and maintenance packages for all our solutions.',
+    },
   ];
 
   const FaqSection = () => {
@@ -192,11 +200,19 @@ const Home = () => {
                   onClick={() => toggleFaq(index)}
                 >
                   <span className="text-gray-800">{faq.question}</span>
-                  <span className={`text-blue-600 text-xl transform transition-transform ${openIndex === index ? 'rotate-90' : ''}`}>
+                  <span
+                    className={`text-blue-600 text-xl transform transition-transform ${
+                      openIndex === index ? 'rotate-90' : ''
+                    }`}
+                  >
                     ➤
                   </span>
                 </button>
-                <div className={`bg-gray-50 transition-all duration-300 ${openIndex === index ? 'max-h-96 p-6' : 'max-h-0'}`}>
+                <div
+                  className={`bg-gray-50 transition-all duration-300 ${
+                    openIndex === index ? 'max-h-96 p-6' : 'max-h-0'
+                  }`}
+                >
                   <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                 </div>
               </div>
@@ -217,8 +233,6 @@ const Home = () => {
         <HeroSection />
         <TwoColumnSection />
         <ExperienceSection />
-       
-      
         <FaqSection />
       </main>
     </div>

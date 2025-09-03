@@ -1,5 +1,4 @@
 'use client';
-
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -84,7 +83,7 @@ const SEOServices = () => {
             We offer top-tier SEO Optimisation services, seamlessly integrating teams and automating workflows. 
             We streamline processes for agile and high-quality product delivery.
           </p>
-          <button className="hero-button">Let's Connect</button>
+          <button className="hero-button">Let&apos;s Connect</button>
         </div>
       </section>
 
@@ -98,11 +97,11 @@ const SEOServices = () => {
                 <h2 className="section-title">
                   Revolutionize Your <br />
                   Business with Our <br />
-                  DevOps consulting <br />
-                  services
+                  DevOps Consulting <br />
+                  Services
                 </h2>
                 <p className="section-description">
-                  Experience streamlined and accelerated DevOps software development services with our collaborative workspace culture and customized AI integration. Xeven Solutions, a top-tier devops consultants, integrates AI-powered automation tools, predictive analysis, and quality assurance. This helps us optimize efficiency, mitigate risks, and achieve faster, more reliable software deployments. Experience the transformational power of our Best DevOps Consulting Services. We offer expert guidance to optimize your DevOps operations, enhancing collaboration between development and operations teams. Our devops development services encompass tailored strategies, tools, and methodologies to accelerate software delivery and ensure efficient deployment. Embrace the future of software development and gain a competitive edge with our Best DevOps solutions and services.
+                  Experience streamlined and accelerated DevOps software development services with our collaborative workspace culture and customized AI integration. Xeven Solutions, a top-tier DevOps consultancy, integrates AI-powered automation tools, predictive analysis, and quality assurance. This helps us optimize efficiency, mitigate risks, and achieve faster, more reliable software deployments. Experience the transformational power of our Best DevOps Consulting Services. We offer expert guidance to optimize your DevOps operations, enhancing collaboration between development and operations teams. Our DevOps development services encompass tailored strategies, tools, and methodologies to accelerate software delivery and ensure efficient deployment. Embrace the future of software development and gain a competitive edge with our Best DevOps solutions and services.
                 </p>
                 <button className="demo-button">Schedule a Demo</button>
               </div>
@@ -154,8 +153,6 @@ const SEOServices = () => {
           </div>
         </div>
       </section>
-
-     
 
       {/* FAQ Section */}
       <section className="faq-section">
@@ -385,71 +382,6 @@ const SEOServices = () => {
           line-height: 1.625;
         }
 
-        .collaboration-section {
-          padding: 5rem 1rem;
-          background: #f9fafb;
-        }
-
-        .collaboration-container {
-          max-width: 80rem;
-          margin: 0 auto;
-        }
-
-        .collaboration-title {
-          font-size: 2.25rem;
-          font-weight: 700;
-          text-align: center;
-          margin-bottom: 4rem;
-          color: #1f2937;
-        }
-
-        .collaboration-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-
-        .collaboration-card {
-          background: white;
-          border-radius: 0.75rem;
-          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-          border: 1px solid #e5e7eb;
-          transform: translateY(0);
-          transition: all 0.3s ease;
-        }
-
-        .collaboration-card:hover {
-          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-          transform: translateY(-0.5rem);
-        }
-
-        .collaboration-card-content {
-          padding: 2rem;
-        }
-
-        .collaboration-icon-container {
-          display: flex;
-          justify-content: center;
-          margin-bottom: 1.5rem;
-        }
-
-        .collaboration-icon {
-          width: 5rem;
-          height: 5rem;
-        }
-
-        .collaboration-card-title {
-          font-size: 1.25rem;
-          font-weight: 700;
-          margin-bottom: 1rem;
-          color: #1f2937;
-        }
-
-        .collaboration-card-description {
-          color: #4b5563;
-          line-height: 1.625;
-        }
-
         .faq-section {
           padding: 5rem 1rem;
         }
@@ -553,10 +485,6 @@ const SEOServices = () => {
 
           .services-grid {
             grid-template-columns: repeat(2, 1fr);
-          }
-
-          .collaboration-grid {
-            grid-template-columns: repeat(3, 1fr);
           }
         }
 

@@ -28,7 +28,7 @@ const GraphicsDesignPage = () => {
     },
     {
       question: "How long does a typical design project take?",
-      answer: "Project timelines vary based on complexity. Logo designs typically take 5-7 business days, while comprehensive brand identity projects may take 2-3 weeks. We'll provide a detailed timeline during consultation."
+      answer: "Project timelines vary based on complexity. Logo designs typically take 5-7 business days, while comprehensive brand identity projects may take 2-3 weeks. We&apos;ll provide a detailed timeline during consultation."
     },
     {
       question: "Do you provide revisions?",
@@ -44,7 +44,7 @@ const GraphicsDesignPage = () => {
     {
       image: "/AI-chatbot-development (1).png",
       title: "Brand Identity Design",
-      description: "Create compelling brand identities that capture your company's essence. From logo design to complete visual identity systems, we help establish your unique market presence."
+      description: "Create compelling brand identities that capture your company&apos;s essence. From logo design to complete visual identity systems, we help establish your unique market presence."
     },
     {
       image: "/NLP.png",
@@ -106,11 +106,11 @@ const GraphicsDesignPage = () => {
         <div className="text-center text-white z-10 p-8 bg-black bg-opacity-50 rounded-xl max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Graphics Design</h1>
           <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-            Unlock your business's full potential with our Custom Graphics Design Services. 
+            Unlock your business&apos;s full potential with our Custom Graphics Design Services. 
             Tailored visual solutions designed to enhance your brand, captivate audiences, and drive growth.
           </p>
           <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-lg hover:from-blue-700 hover:to-blue-800 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
-            Let's Connect
+            Let&apos;s Connect
           </button>
         </div>
       </section>

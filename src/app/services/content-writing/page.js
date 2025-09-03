@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { ChevronRight, ChevronDown } from 'lucide-react';
 
 const AIServicesPage = () => {
@@ -72,22 +73,6 @@ const AIServicesPage = () => {
     {
       question: "Do you offer free consultations?",
       answer: "Yes, we offer a free 30-minute consultation call to understand your project requirements."
-    },
-    {
-      question: "Do you offer free consultations?",
-      answer: "Yes, we offer a free 30-minute consultation call to understand your project requirements."
-    },
-    {
-      question: "Do you offer free consultations?",
-      answer: "Yes, we offer a free 30-minute consultation call to understand your project requirements."
-    },
-    {
-      question: "Do you offer free consultations?",
-      answer: "Yes, we offer a free 30-minute consultation call to understand your project requirements."
-    },
-    {
-      question: "Do you offer free consultations?",
-      answer: "Yes, we offer a free 30-minute consultation call to understand your project requirements."
     }
   ];
 
@@ -115,7 +100,7 @@ const AIServicesPage = () => {
             As a Chat GPT Integration Service Provider, we enhance user experiences and automate customer support with Chat GPT integration.
           </p>
           <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-            Let's Connect
+            Let&apos;s Connect
           </button>
         </div>
       </section>
@@ -152,10 +137,13 @@ const AIServicesPage = () => {
 
             {/* Right Column */}
             <div className="text-center">
-              <img 
+              <Image 
                 src="/Content.jpeg" 
                 alt="AI Services" 
+                width={600} // Replace with actual image width
+                height={400} // Replace with actual image height
                 className="w-full rounded-lg shadow-2xl"
+                priority
               />
             </div>
           </div>
@@ -176,10 +164,12 @@ const AIServicesPage = () => {
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 text-center border">
                 <div className="mb-6">
-                  <img 
+                  <Image 
                     src={service.image} 
                     alt={service.title}
-                    className="w-20 h-20 mx-auto object-contain"
+                    width={80} // Replace with actual image width
+                    height={80} // Replace with actual image height
+                    className="mx-auto object-contain"
                   />
                 </div>
                 <h5 className="text-xl font-bold mb-4 text-gray-800">
@@ -207,10 +197,12 @@ const AIServicesPage = () => {
             {industries.map((industry, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 text-center border">
                 <div className="mb-6">
-                  <img 
+                  <Image 
                     src={industry.image} 
                     alt={industry.title}
-                    className="w-20 h-20 mx-auto object-contain"
+                    width={80} // Replace with actual image width
+                    height={80} // Replace with actual image height
+                    className="mx-auto object-contain"
                   />
                 </div>
                 <h5 className="text-xl font-bold mb-4 text-gray-800">

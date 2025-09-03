@@ -57,7 +57,7 @@ const MobileAppPage = () => {
         <div className="hero-content">
           <h1>Custom Mobile App Development</h1>
           <p>Turn your business ideas into compelling, user-focused apps with our top-tier Mobile App Developer Services.</p>
-          <button className="btn btn-custom">Let's Connect</button>
+          <button className="btn btn-custom">Let&apos;s Connect</button>
         </div>
       </section>
 
@@ -69,7 +69,7 @@ const MobileAppPage = () => {
             <div className="col-lg-6 col-md-6 col-12 mb-4 mb-md-0">
               <h2 className="gradient-text mb-4">Premier mobile app solutions, your top choice</h2>
               <p className="para">
-                WEBSTER, a top-tier mobile app development company, delivers cutting-edge custom solutions. We help ambitious businesses to build scalable, user-focused apps that succeed. Our unmatched custom iOS and custom android app development services and focus on exceptional experiences make us the premier choice to bring your vision to life. Our app development team collaborates to create custom features, streamline processes for a better user experience, analyze usage patterns for mobile optimization, and deliver actionable insights to refine your mobile strategy. Mobile application services help unlock your brand's full potential and deliver innovative solutions to gain a competitive edge in today's digital landscape.
+                WEBSTER, a top-tier mobile app development company, delivers cutting-edge custom solutions. We help ambitious businesses to build scalable, user-focused apps that succeed. Our unmatched custom iOS and custom android app development services and focus on exceptional experiences make us the premier choice to bring your vision to life. Our app development team collaborates to create custom features, streamline processes for a better user experience, analyze usage patterns for mobile optimization, and deliver actionable insights to refine your mobile strategy. Mobile application services help unlock your brand&apos;s full potential and deliver innovative solutions to gain a competitive edge in today&apos;s digital landscape.
               </p>
               <button className="btn btn-primary mt-3">Schedule a Demo</button>
             </div>
@@ -228,7 +228,7 @@ const MobileAppPage = () => {
                     <h5 className="card-title fw-bold">Chat GPT Integration</h5>
                     <p className="card-text para">
                       Automate responses, handle queries effectively, and engage users in natural
-                      conversations, enhancing your platform's user experience.
+                      conversations, enhancing your platform&apos;s user experience.
                     </p>
                   </div>
                 </div>
