@@ -1,13 +1,16 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from 'react';
+import Image from "next/image";
+import { Shield } from 'lucide-react';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     contactReasons: {
-      mobileAppDesign: false,
+      webDesign: false,
       collaboration: false,
+      mobileAppDesign: false,
       others: false,
     },
     budget: [2500],
@@ -46,46 +49,54 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-4">
-      {/* Contact Section Container - Fixed width 1,596px, Hug height 1,771px */}
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-slate-900 flex items-center justify-center p-4">
+      {/* Background Image Overlay */}
+      <div className="absolute inset-0 opacity-5">
+        <Image
+          src="/ai-generated-8540913_1280.jpg" 
+          alt="Background" 
+          className="w-full h-full object-cover"
+          fill
+          priority
+        />
+      </div>
+      
+      {/* Contact Section Container */}
       <div
-        className="bg-black border border-gray-600 rounded-lg overflow-hidden"
+        className="relative bg-gradient-to-br from-slate-800/95 to-gray-900/95 backdrop-blur-lg border border-slate-600/30 rounded-3xl overflow-hidden shadow-2xl"
         style={{
           width: "1596px",
           minHeight: "1771px",
-          maxWidth: "100vw", // Responsive fallback
-          border: "1px solid #262626",
+          maxWidth: "100vw",
         }}
       >
         <div className="flex flex-col h-full">
           {/* Header Section */}
-          <div className="bg-gradient-to-br from-black to-zinc-900 text-center px-8 py-12 flex-shrink-0">
+          <div className="bg-gradient-to-br from-blue-600/30 to-teal-600/30 text-center px-8 py-12 flex-shrink-0 relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-teal-500/10"></div>
+            
             {/* Icon Box */}
-            <div className="w-16 h-16 rounded-xl mx-auto mb-8 flex items-center justify-center bg-lime-400 shadow-lg">
-              <svg
-                className="w-8 h-8 text-black"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z" />
-              </svg>
+            <div className="relative w-20 h-20 rounded-2xl mx-auto mb-8 flex items-center justify-center bg-gradient-to-br from-blue-500 to-teal-500 shadow-xl">
+              <Shield className="w-10 h-10 text-white" />
             </div>
 
             {/* Heading */}
-            <h1 className="text-white text-3xl font-bold mb-6 max-w-2xl mx-auto leading-tight">
+            <h1 className="relative text-white text-4xl md:text-5xl font-bold mb-6 max-w-2xl mx-auto leading-tight">
               Thank you for your Interest in{" "}
-              <span className="text-white">SquareUp.</span>
+              <span className="bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
+                SquareUp.
+              </span>
             </h1>
 
             {/* Paragraph */}
-            <p className="text-gray-400 text-base mb-10 leading-relaxed max-w-2xl mx-auto">
+            <p className="relative text-slate-300 text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
               We would love to hear from you and discuss how we can help bring
               your digital ideas to life. Here are the different ways you can
               get in touch with us.
             </p>
 
             {/* Button */}
-            <button className="bg-lime-400 hover:bg-lime-500 text-black font-semibold px-8 py-4 rounded-lg shadow-lg transition duration-200 text-lg">
+            <button className="relative bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white font-semibold px-10 py-4 rounded-xl shadow-xl transition-all duration-300 text-lg transform hover:scale-105 hover:shadow-2xl">
               Start Project
             </button>
           </div>
@@ -99,7 +110,7 @@ export default function ContactPage() {
                   <div className="space-y-3">
                     <label
                       htmlFor="fullName"
-                      className="block text-white text-lg font-medium"
+                      className="block text-slate-200 text-lg font-medium"
                     >
                       Full Name
                     </label>
@@ -111,14 +122,14 @@ export default function ContactPage() {
                       onChange={(e) =>
                         handleInputChange("fullName", e.target.value)
                       }
-                      className="w-full px-4 py-4 bg-zinc-800 border border-zinc-600 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-transparent"
+                      className="w-full px-4 py-4 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white text-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm transition-all duration-200"
                       required
                     />
                   </div>
                   <div className="space-y-3">
                     <label
                       htmlFor="email"
-                      className="block text-white text-lg font-medium"
+                      className="block text-slate-200 text-lg font-medium"
                     >
                       Email
                     </label>
@@ -130,7 +141,7 @@ export default function ContactPage() {
                       onChange={(e) =>
                         handleInputChange("email", e.target.value)
                       }
-                      className="w-full px-4 py-4 bg-zinc-800 border border-zinc-600 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-transparent"
+                      className="w-full px-4 py-4 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white text-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm transition-all duration-200"
                       required
                     />
                   </div>
@@ -138,7 +149,7 @@ export default function ContactPage() {
 
                 {/* Contact Reasons */}
                 <div className="space-y-6">
-                  <label className="block text-white text-lg font-medium">
+                  <label className="block text-slate-200 text-lg font-medium">
                     Why are you contacting us?
                   </label>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -150,7 +161,7 @@ export default function ContactPage() {
                     ].map((item) => (
                       <div
                         key={item.key}
-                        className="flex items-center space-x-4"
+                        className="flex items-center space-x-4 p-4 rounded-xl bg-slate-800/30 border border-slate-700/50 hover:bg-slate-700/30 transition-all duration-200"
                       >
                         <div className="relative">
                           <input
@@ -160,11 +171,11 @@ export default function ContactPage() {
                             onChange={(e) =>
                               handleCheckboxChange(item.key, e.target.checked)
                             }
-                            className="w-6 h-6 text-lime-400 bg-zinc-800 border-zinc-600 rounded focus:ring-lime-400 focus:ring-2"
+                            className="w-6 h-6 text-blue-400 bg-slate-800 border-slate-600 rounded-lg focus:ring-blue-400 focus:ring-2 transition-all duration-200"
                           />
                           {formData.contactReasons[item.key] && (
                             <svg
-                              className="absolute top-1 left-1 w-4 h-4 text-lime-400 pointer-events-none"
+                              className="absolute top-1 left-1 w-4 h-4 text-blue-400 pointer-events-none"
                               fill="currentColor"
                               viewBox="0 0 20 20"
                             >
@@ -178,7 +189,7 @@ export default function ContactPage() {
                         </div>
                         <label
                           htmlFor={item.key}
-                          className="text-gray-300 cursor-pointer hover:text-white transition-colors text-lg"
+                          className="text-slate-300 cursor-pointer hover:text-white transition-colors text-lg"
                         >
                           {item.label}
                         </label>
@@ -189,13 +200,13 @@ export default function ContactPage() {
 
                 {/* Budget Slider */}
                 <div className="space-y-6">
-                  <label className="block text-white text-lg font-medium">
+                  <label className="block text-slate-200 text-lg font-medium">
                     Your Budget
                   </label>
-                  <p className="text-gray-400 text-base">
+                  <p className="text-slate-400 text-base">
                     Slide to indicate your budget range
                   </p>
-                  <div className="px-4 py-8">
+                  <div className="px-4 py-8 bg-slate-800/30 rounded-xl border border-slate-700/50">
                     <div className="relative">
                       <input
                         type="range"
@@ -204,10 +215,10 @@ export default function ContactPage() {
                         step="100"
                         value={formData.budget[0]}
                         onChange={handleBudgetChange}
-                        className="w-full h-3 bg-zinc-700 rounded-lg appearance-none cursor-pointer slider"
+                        className="w-full h-3 bg-slate-700 rounded-lg appearance-none cursor-pointer slider"
                       />
                       <div
-                        className="absolute top-0 left-0 h-3 bg-lime-400 rounded-lg pointer-events-none"
+                        className="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg pointer-events-none transition-all duration-300"
                         style={{
                           width: `${
                             ((formData.budget[0] - 1000) / 4000) * 100
@@ -215,12 +226,12 @@ export default function ContactPage() {
                         }}
                       ></div>
                     </div>
-                    <div className="flex justify-between text-base text-gray-400 mt-4">
-                      <span>$1000</span>
-                      <span className="text-lime-400 font-semibold text-lg">
+                    <div className="flex justify-between text-base text-slate-400 mt-6">
+                      <span>$1,000</span>
+                      <span className="text-transparent bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text font-bold text-xl">
                         ${formData.budget[0].toLocaleString()}
                       </span>
-                      <span>$5000</span>
+                      <span>$5,000</span>
                     </div>
                   </div>
                 </div>
@@ -229,7 +240,7 @@ export default function ContactPage() {
                 <div className="space-y-3">
                   <label
                     htmlFor="message"
-                    className="block text-white text-lg font-medium"
+                    className="block text-slate-200 text-lg font-medium"
                   >
                     Your Message
                   </label>
@@ -241,7 +252,7 @@ export default function ContactPage() {
                       handleInputChange("message", e.target.value)
                     }
                     rows="6"
-                    className="w-full px-4 py-4 bg-zinc-800 border border-zinc-600 rounded-lg text-white text-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-transparent resize-none"
+                    className="w-full px-4 py-4 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white text-lg placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent resize-none backdrop-blur-sm transition-all duration-200"
                     required
                   />
                 </div>
@@ -250,7 +261,7 @@ export default function ContactPage() {
                 <div className="text-center pt-8">
                   <button
                     type="submit"
-                    className="w-full max-w-md bg-lime-400 hover:bg-lime-500 text-black font-semibold py-4 px-8 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl text-lg"
+                    className="w-full max-w-md bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white font-semibold py-5 px-8 rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl text-lg transform hover:scale-105 hover:-translate-y-1"
                   >
                     Submit
                   </button>
@@ -264,23 +275,35 @@ export default function ContactPage() {
       <style jsx>{`
         .slider::-webkit-slider-thumb {
           appearance: none;
-          height: 24px;
-          width: 24px;
+          height: 28px;
+          width: 28px;
           border-radius: 50%;
-          background: #a3e635;
+          background: linear-gradient(135deg, #3b82f6, #14b8a6);
           cursor: pointer;
-          border: 3px solid #18181b;
-          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+          border: 4px solid #1e293b;
+          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+          transition: all 0.2s ease;
+        }
+
+        .slider::-webkit-slider-thumb:hover {
+          transform: scale(1.1);
+          box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
         }
 
         .slider::-moz-range-thumb {
-          height: 24px;
-          width: 24px;
+          height: 28px;
+          width: 28px;
           border-radius: 50%;
-          background: #a3e635;
+          background: linear-gradient(135deg, #3b82f6, #14b8a6);
           cursor: pointer;
-          border: 3px solid #18181b;
-          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+          border: 4px solid #1e293b;
+          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+          transition: all 0.2s ease;
+        }
+
+        .slider::-moz-range-thumb:hover {
+          transform: scale(1.1);
+          box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
         }
 
         @media (max-width: 1596px) {
